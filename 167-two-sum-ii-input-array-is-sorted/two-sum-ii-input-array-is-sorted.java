@@ -3,18 +3,19 @@ class Solution {
         int left=0;
         int right=numbers.length-1;
 
-        for(int i=0;i<numbers.length;i++){
-            
-            if(numbers[left] + numbers[right]==target){
+        int sum=0;
+        while(left<right){
+            sum=numbers[left]+numbers[right];
+
+            if(sum == target){
                 return new int[]{left+1,right+1};
             }
-            else if(numbers[left]+numbers[right]<target){
+            else if( sum<target){
                 left++;
             }
-            else{
+            else {
                 right--;
             }
-
         }
         return new int[]{};
     }
